@@ -1,0 +1,25 @@
+Name: K8sManager
+Host: 0.0.0.0
+Port: 8888
+MaxBytes: 209715200
+Timeout: 30000
+Env: prod
+StaticDir: /Users/yt-it/Desktop/projects/erp/dev-ops/kube-manager/backend/dist
+MaxWsConnection: 50
+WSOrigin: "*"
+WhiteDepId: 3247
+ItUserDepId: 3195
+
+Log:
+  Mode: console # 本地 console 好调试 远程服务器为 file
+  Encoding: plain # 本地 plain 好调试 远程服务器为 json
+  Path: logs
+  Level: debug
+  Rotation: daily
+
+DB:
+  DefaultMysql:
+    DataSourceWrite: "root:sa@tcp(127.0.0.1:3306)/k8s_manager?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai&timeout=10s&readTimeout=10s&writeTimeout=10s"
+    DataSourceRead: "root:sa@tcp(127.0.0.1:3306)/k8s_manager?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai&timeout=10s&readTimeout=10s&writeTimeout=10s"
+    MaxConnIdle: 2
+    MaxOpen: 3
