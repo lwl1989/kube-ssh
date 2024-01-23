@@ -1,7 +1,7 @@
 package ops
 
 import (
-	"github.com/go-libraries/kube-manager/backend/internal/svc"
+	"github.com/lwl1989/kube-ssh/backend/internal/svc"
 	"net/http"
 	"os"
 )

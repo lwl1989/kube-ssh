@@ -2,7 +2,7 @@ package model
 
 import (
 	"errors"
-	"github.com/go-libraries/kube-manager/backend/internal/types/timex"
+	"github.com/lwl1989/kube-ssh/backend/internal/types/timex"
 )
 
 type Cluster struct {

@@ -13,7 +13,7 @@ import (
 	"bytes"
 	"compress/gzip"
 	"fmt"
-	"github.com/go-libraries/kube-manager/backend/internal/handler/template"
+	"github.com/lwl1989/kube-ssh/backend/internal/handler/template"
 	"io"
 	"io/ioutil"
 	"os"

@@ -2,12 +2,12 @@ package ops
 
 import (
 	"context"
-	"github.com/go-libraries/kube-manager/backend/internal/library/array"
-	"github.com/go-libraries/kube-manager/backend/internal/logic/ops/common"
-	"github.com/go-libraries/kube-manager/backend/internal/model"
-	"github.com/go-libraries/kube-manager/backend/internal/svc"
-	"github.com/go-libraries/kube-manager/backend/internal/types"
-	"github.com/go-libraries/kube-manager/backend/internal/types/timex"
+	"github.com/lwl1989/kube-ssh/backend/internal/library/array"
+	"github.com/lwl1989/kube-ssh/backend/internal/logic/ops/common"
+	"github.com/lwl1989/kube-ssh/backend/internal/model"
+	"github.com/lwl1989/kube-ssh/backend/internal/svc"
+	"github.com/lwl1989/kube-ssh/backend/internal/types"
+	"github.com/lwl1989/kube-ssh/backend/internal/types/timex"
 	"github.com/pkg/errors"
 	"net/http"
 

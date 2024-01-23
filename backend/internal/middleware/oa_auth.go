@@ -2,9 +2,9 @@ package middleware
 
 import (
 	"context"
-	"github.com/go-libraries/kube-manager/backend/internal/handler/api_utils"
-	"github.com/go-libraries/kube-manager/backend/internal/middleware/mock"
-	"github.com/go-libraries/kube-manager/backend/internal/middleware/types"
+	"github.com/lwl1989/kube-ssh/backend/internal/handler/api_utils"
+	"github.com/lwl1989/kube-ssh/backend/internal/middleware/mock"
+	"github.com/lwl1989/kube-ssh/backend/internal/middleware/types"
 	"github.com/zeromicro/go-zero/core/logx"
 	"net/http"
 )

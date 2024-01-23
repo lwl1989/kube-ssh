@@ -1,12 +1,12 @@
 package md
 
 import (
-	"github.com/go-libraries/kube-manager/backend/internal/config"
-	"github.com/go-libraries/kube-manager/backend/internal/handler/api_utils"
-	"github.com/go-libraries/kube-manager/backend/internal/middleware"
-	"github.com/go-libraries/kube-manager/backend/internal/middleware/types"
-	"github.com/go-libraries/kube-manager/backend/internal/model"
-	"github.com/go-libraries/kube-manager/backend/internal/svc"
+	"github.com/lwl1989/kube-ssh/backend/internal/config"
+	"github.com/lwl1989/kube-ssh/backend/internal/handler/api_utils"
+	"github.com/lwl1989/kube-ssh/backend/internal/middleware"
+	"github.com/lwl1989/kube-ssh/backend/internal/middleware/types"
+	"github.com/lwl1989/kube-ssh/backend/internal/model"
+	"github.com/lwl1989/kube-ssh/backend/internal/svc"
 	"github.com/pkg/errors"
 	"net/http"
 )

@@ -4,10 +4,10 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
-	"github.com/go-libraries/kube-manager/backend/internal/logic/ops/common"
-	middleware "github.com/go-libraries/kube-manager/backend/internal/middleware/types"
-	"github.com/go-libraries/kube-manager/backend/internal/model"
-	"github.com/go-libraries/kube-manager/backend/internal/types/timex"
+	"github.com/lwl1989/kube-ssh/backend/internal/logic/ops/common"
+	middleware "github.com/lwl1989/kube-ssh/backend/internal/middleware/types"
+	"github.com/lwl1989/kube-ssh/backend/internal/model"
+	"github.com/lwl1989/kube-ssh/backend/internal/types/timex"
 	"github.com/spf13/cast"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -15,8 +15,8 @@ import (
 	"k8s.io/client-go/tools/clientcmd"
 	"strings"
 
-	"github.com/go-libraries/kube-manager/backend/internal/svc"
-	"github.com/go-libraries/kube-manager/backend/internal/types"
+	"github.com/lwl1989/kube-ssh/backend/internal/svc"
+	"github.com/lwl1989/kube-ssh/backend/internal/types"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )

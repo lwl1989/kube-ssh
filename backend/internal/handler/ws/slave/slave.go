@@ -1,6 +1,6 @@
 package slave
 
-import "github.com/go-libraries/kube-manager/backend/internal/webtty"
+import "github.com/lwl1989/kube-ssh/backend/internal/webtty"
 
 // Slave is webtty.Slave with some additional methods.
 type Slave interface {

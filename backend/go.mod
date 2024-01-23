@@ -1,4 +1,4 @@
-module github.com/go-libraries/kube-manager/backend
+module github.com/lwl1989/kube-ssh/backend
 
 go 1.19
 

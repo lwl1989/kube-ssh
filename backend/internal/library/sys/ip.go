@@ -2,7 +2,7 @@ package sys
 
 import (
 	"errors"
-	"github.com/go-libraries/kube-manager/backend/internal/config"
+	"github.com/lwl1989/kube-ssh/backend/internal/config"
 	"net"
 	"os"
 	"strconv"

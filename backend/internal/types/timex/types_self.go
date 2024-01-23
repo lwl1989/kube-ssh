@@ -3,7 +3,7 @@ package timex
 import (
 	"database/sql/driver"
 	"fmt"
-	"github.com/go-libraries/kube-manager/backend/internal/library/utils"
+	"github.com/lwl1989/kube-ssh/backend/internal/library/utils"
 	"github.com/spf13/cast"
 	"time"
 )

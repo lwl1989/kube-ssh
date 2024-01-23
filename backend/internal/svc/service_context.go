@@ -1,10 +1,10 @@
 package svc
 
 import (
-	"github.com/go-libraries/kube-manager/backend/internal/cache/token"
-	"github.com/go-libraries/kube-manager/backend/internal/config"
-	"github.com/go-libraries/kube-manager/backend/internal/library/tracex"
 	"github.com/go-libraries/ormx"
+	"github.com/lwl1989/kube-ssh/backend/internal/cache/token"
+	"github.com/lwl1989/kube-ssh/backend/internal/config"
+	"github.com/lwl1989/kube-ssh/backend/internal/library/tracex"
 	"github.com/zeromicro/go-zero/core/proc"
 )
 

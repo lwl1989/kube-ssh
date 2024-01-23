@@ -2,9 +2,9 @@ package main
 
 import (
 	"flag"
-	"github.com/go-libraries/kube-manager/backend/internal/config"
-	"github.com/go-libraries/kube-manager/backend/internal/model"
-	"github.com/go-libraries/kube-manager/backend/internal/svc"
+	"github.com/lwl1989/kube-ssh/backend/internal/config"
+	"github.com/lwl1989/kube-ssh/backend/internal/model"
+	"github.com/lwl1989/kube-ssh/backend/internal/svc"
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/core/logx"
 )

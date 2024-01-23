@@ -1,10 +1,10 @@
 package handler
 
 import (
-	"github.com/go-libraries/kube-manager/backend/internal/handler/api_utils"
-	"github.com/go-libraries/kube-manager/backend/internal/handler/ops"
-	"github.com/go-libraries/kube-manager/backend/internal/middleware"
-	"github.com/go-libraries/kube-manager/backend/internal/svc"
+	"github.com/lwl1989/kube-ssh/backend/internal/handler/api_utils"
+	"github.com/lwl1989/kube-ssh/backend/internal/handler/ops"
+	"github.com/lwl1989/kube-ssh/backend/internal/middleware"
+	"github.com/lwl1989/kube-ssh/backend/internal/svc"
 	"github.com/zeromicro/go-zero/rest"
 	"net/http"
 )

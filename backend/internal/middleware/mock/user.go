@@ -1,7 +1,7 @@
 package mock
 
 import (
-	"github.com/go-libraries/kube-manager/backend/internal/middleware/types"
+	"github.com/lwl1989/kube-ssh/backend/internal/middleware/types"
 	"net/http"
 )
 

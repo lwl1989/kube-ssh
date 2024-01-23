@@ -1,11 +1,11 @@
 package ops
 
 import (
-	"github.com/go-libraries/kube-manager/backend/internal/handler/api_utils"
-	"github.com/go-libraries/kube-manager/backend/internal/logic/ops"
-	middleware "github.com/go-libraries/kube-manager/backend/internal/middleware/types"
-	"github.com/go-libraries/kube-manager/backend/internal/svc"
-	"github.com/go-libraries/kube-manager/backend/internal/types"
+	"github.com/lwl1989/kube-ssh/backend/internal/handler/api_utils"
+	"github.com/lwl1989/kube-ssh/backend/internal/logic/ops"
+	middleware "github.com/lwl1989/kube-ssh/backend/internal/middleware/types"
+	"github.com/lwl1989/kube-ssh/backend/internal/svc"
+	"github.com/lwl1989/kube-ssh/backend/internal/types"
 	"net/http"
 )
 

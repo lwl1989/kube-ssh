@@ -1,9 +1,9 @@
 package common
 
 import (
-	"github.com/go-libraries/kube-manager/backend/internal/cache/token"
-	"github.com/go-libraries/kube-manager/backend/internal/middleware"
-	"github.com/go-libraries/kube-manager/backend/internal/middleware/types"
+	"github.com/lwl1989/kube-ssh/backend/internal/cache/token"
+	"github.com/lwl1989/kube-ssh/backend/internal/middleware"
+	"github.com/lwl1989/kube-ssh/backend/internal/middleware/types"
 	"github.com/zeromicro/go-zero/core/logx"
 )
 

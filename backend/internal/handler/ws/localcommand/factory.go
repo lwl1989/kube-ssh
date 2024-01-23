@@ -4,7 +4,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/go-libraries/kube-manager/backend/internal/handler/ws/slave"
+	"github.com/lwl1989/kube-ssh/backend/internal/handler/ws/slave"
 )
 
 // Options : close options
