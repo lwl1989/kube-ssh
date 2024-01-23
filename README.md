@@ -40,10 +40,10 @@ type IOaUser interface {
 
 # 效果预览
 
-![集群列表](https://www.github.com/lwl1989/kube-ssh/docs/clusters.png)
+![集群列表](https://www.github.com/lwl1989/kube-ssh/docs/clusters.png?raw=true)
 
-![pod列表](https://www.github.com/lwl1989/kube-ssh/docs/pods.png)
+![pod列表](https://www.github.com/lwl1989/kube-ssh/docs/pods.png?raw=true)
 
-![命令行UI](https://www.github.com/lwl1989/kube-ssh/docs/terminal.png)
+![命令行UI](https://www.github.com/lwl1989/kube-ssh/docs/terminal.png?raw=true)
 
-![img.png](https://www.github.com/lwl1989/kube-ssh/docs/manager.png)
+![img.png](https://www.github.com/lwl1989/kube-ssh/docs/manager.png?raw=true)
