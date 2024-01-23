@@ -42,8 +42,8 @@ type IOaUser interface {
 
 ![集群列表](https://github.com/lwl1989/kube-ssh/blob/main/docs/clusters.png?raw=true)
 
-![pod列表](https://www.github.com/lwl1989/kube-ssh/blob/main/docs/pods.png?raw=true)
+![pod列表](https://github.com/lwl1989/kube-ssh/blob/main/docs/pods.png?raw=true)
 
-![命令行UI](https://www.github.com/lwl1989/kube-ssh/blob/main/docs/terminal.png?raw=true)
+![命令行UI](https://github.com/lwl1989/kube-ssh/blob/main/docs/terminal.png?raw=true)
 
-![img.png](https://www.github.com/lwl1989/kube-ssh/blob/main/docs/manager.png?raw=true)
+![img.png](https://github.com/lwl1989/kube-ssh/blob/main/docs/manager.png?raw=true)
