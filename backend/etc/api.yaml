@@ -4,7 +4,7 @@ Port: 8888
 MaxBytes: 209715200
 Timeout: 30000
 Env: prod
-StaticDir: /project/backend/dist #部署的时候改成绝对路径
+StaticDir: dist #部署的时候改成绝对路径
 MaxWsConnection: 50
 WSOrigin: "*"
 WhiteDepId: 3247
