@@ -14,11 +14,11 @@ const (
 
 type Config struct {
 	rest.RestConf
+	DB                   DBConfig
 	Cors                 string `json:",default=*"` // 跨域配置 ,逗号拼接
 	Env                  string `json:",default=dev"`
 	TokenExpiresDuration int    `json:",default=300"`
 	StaticDir            string `json:",default=dist"`
-	DB                   DBConfig
 	MaxWsConnection      int    `json:",default=50"`
 	WSOrigin             string `json:",default=*"`
 	WhiteDepId           int    `json:",default=3247"`

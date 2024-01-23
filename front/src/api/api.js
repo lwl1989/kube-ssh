@@ -1,5 +1,21 @@
 import request from '@/utils/request'
 
+export function clusterUpsert(data) {
+  return request({
+    url: '/k8s/cluster',
+    method: 'post',
+    data
+  })
+}
+
+export function clusterStatusChange(data) {
+  return request({
+    url: '/k8s/cluster',
+    method: 'put',
+    data
+  })
+}
+
 export function clusterList() {
   return request({
     url: '/k8s/clusters',

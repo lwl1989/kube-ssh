@@ -37,13 +37,13 @@ func NewClusterLogic(ctx context.Context, svcCtx *svc.ServiceContext) *ClusterLo
 
 func (l *ClusterLogic) ClusterList(us middleware.OaUserInfo) (resp types.ClustersResponse, err error) {
 	var clusters []model.Cluster
-	q := l.svcCtx.DefaultDb.Table(model.ClusterTableName())
+	q := l.svcCtx.DefaultDb.ReadWithContext(l.ctx).Table(model.ClusterTableName())
 	if l.svcCtx.Config.WhiteDepId != us.OrgId {
 		var manager model.UserManager
-		l.svcCtx.DefaultDb.Table(manager.TableName()).Where("user_id=?", us.Id).First(&manager)
+		l.svcCtx.DefaultDb.ReadWithContext(l.ctx).Table(manager.TableName()).Where("user_id=?", us.Id).First(&manager)
 		if ok, _ := manager.Available(); !ok {
 			var cid []int
-			l.svcCtx.DefaultDb.Table(model.UserWhiteTableName()).Where("user_id=? and status=?", us.Id, 1).Pluck("cluster_id", &cid)
+			l.svcCtx.DefaultDb.ReadWithContext(l.ctx).Table(model.UserWhiteTableName()).Where("user_id=? and status=?", us.Id, 1).Pluck("cluster_id", &cid)
 			if len(cid) == 0 {
 				return
 			}
@@ -69,7 +69,7 @@ func (l *ClusterLogic) ClusterList(us middleware.OaUserInfo) (resp types.Cluster
 
 func (l *ClusterLogic) WorkloadPods(req types.RequestWithId) (resp types.PodListRes, err error) {
 	var cluster model.Cluster
-	l.svcCtx.DefaultDb.Table(model.ClusterTableName()).Where("id=?", req.Id).First(&cluster)
+	l.svcCtx.DefaultDb.ReadWithContext(l.ctx).Table(model.ClusterTableName()).Where("id=?", req.Id).First(&cluster)
 	var ok bool
 	ok, err = cluster.CheckCanUse()
 	if !ok {
@@ -135,7 +135,7 @@ func (l *ClusterLogic) ClusterUpsert(req types.ClusterItemDetail, operatorId int
 			"server_api":  req.ServerApi,
 		}).Error
 	}
-	return l.svcCtx.DefaultDb.WriteWithContext(l.ctx).Create(model.Cluster{
+	return l.svcCtx.DefaultDb.WriteWithContext(l.ctx).Create(&model.Cluster{
 		ServerApi:  req.ServerApi,
 		Name:       req.Name,
 		NameSpaces: req.NameSpace,
@@ -147,9 +147,17 @@ func (l *ClusterLogic) ClusterUpsert(req types.ClusterItemDetail, operatorId int
 	}).Error
 }
 
-func (l *ClusterLogic) ClusterDetail(req *types.RequestWithId) (resp *types.ClusterItemDetail, err error) {
+func (l *ClusterLogic) ClusterStatus(req types.StatusChangeReq, operatorId int) (err error) {
+	return l.svcCtx.DefaultDb.WriteWithContext(l.ctx).Table(model.ClusterTableName()).
+		Where("id=?", req.Id).Updates(map[string]any{
+		"status":      req.Status,
+		"operator_id": operatorId,
+	}).Error
+}
+
+func (l *ClusterLogic) ClusterDetail(req types.RequestWithId) (resp *types.ClusterItemDetail, err error) {
 	var cluster model.Cluster
-	l.svcCtx.DefaultDb.Table(model.ClusterTableName()).Where("id=?", req.Id).First(&cluster)
+	l.svcCtx.DefaultDb.ReadWithContext(l.ctx).Table(cluster.TableName()).Where("id=?", req.Id).First(&cluster)
 	if cluster.Id == 0 {
 		return nil, errors.New("集群信息查找失败")
 	}
@@ -158,7 +166,7 @@ func (l *ClusterLogic) ClusterDetail(req *types.RequestWithId) (resp *types.Clus
 		Name:       cluster.Name,
 		ServerApi:  cluster.ServerApi,
 		NameSpace:  cluster.NameSpaces,
-		Config:     "******",
+		Config:     cluster.Config,
 		OperatorId: cluster.OperatorId,
 		Status:     cluster.Status,
 	}, nil

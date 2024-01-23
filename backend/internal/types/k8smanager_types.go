@@ -23,7 +23,6 @@ type ClusterItemDetail struct {
 	Config     string `gorm:"column:config" json:"config"`
 	OperatorId int    `gorm:"column:operator_id"  json:"operator_id"`
 	Status     int    `json:"status" gorm:"column:status"`
-
 }
 
 type ClustersResponse struct {
@@ -68,4 +67,9 @@ type ManagerUpsertReq struct {
 type WhiteUpsertReq struct {
 	UserId    int `json:"user_id"`
 	ClusterId int `json:"cluster_id"`
+}
+
+type StatusChangeReq struct {
+	Id     int `json:"id" validate:"required,gt=0"`
+	Status int `json:"status,gt=0"`
 }

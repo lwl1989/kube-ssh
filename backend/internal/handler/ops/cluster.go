@@ -59,6 +59,24 @@ func ClusterUpsertHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
 	}
 }
 
+func ClusterStatusHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		var req types.StatusChangeReq
+		if err := api_utils.Parse(r, &req); err != nil {
+			api_utils.ResponseStandWithError(w, nil, err)
+			return
+		}
+
+		l := ops.NewClusterLogic(r.Context(), svcCtx)
+		err := l.ClusterStatus(req, md.GetNowLoginUserId(r))
+		if err != nil {
+			api_utils.ResponseStandWithError(w, r, err)
+		} else {
+			api_utils.ResponseStandSuccess(w, r, nil)
+		}
+	}
+}
+
 func ClusterDetailHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		var req types.RequestWithId
@@ -68,7 +86,7 @@ func ClusterDetailHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
 		}
 
 		l := ops.NewClusterLogic(r.Context(), svcCtx)
-		resp, err := l.ClusterDetail(&req)
+		resp, err := l.ClusterDetail(req)
 		if err != nil {
 			api_utils.ResponseStandWithError(w, r, err)
 		} else {

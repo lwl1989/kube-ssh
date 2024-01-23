@@ -4,7 +4,7 @@ Port: 8888
 MaxBytes: 209715200
 Timeout: 30000
 Env: prod
-StaticDir: /Users/yt-it/Desktop/projects/erp/dev-ops/kube-manager/backend/dist
+StaticDir: /project/backend/dist #部署的时候改成绝对路径
 MaxWsConnection: 50
 WSOrigin: "*"
 WhiteDepId: 3247
@@ -19,7 +19,7 @@ Log:
 
 DB:
   DefaultMysql:
-    DataSourceWrite: "root:sa@tcp(127.0.0.1:3306)/k8s_manager?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai&timeout=10s&readTimeout=10s&writeTimeout=10s"
-    DataSourceRead: "root:sa@tcp(127.0.0.1:3306)/k8s_manager?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai&timeout=10s&readTimeout=10s&writeTimeout=10s"
+    DataSourceWrite: "root:password@tcp(127.0.0.1:3306)/kube_manager?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai&timeout=10s&readTimeout=10s&writeTimeout=10s"
+    DataSourceRead: "root:password@tcp(127.0.0.1:3306)/kube_manager?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai&timeout=10s&readTimeout=10s&writeTimeout=10s"
     MaxConnIdle: 2
     MaxOpen: 3

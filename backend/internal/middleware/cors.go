@@ -15,7 +15,7 @@ const (
 	exposeHeaders    = "Access-Control-Expose-Headers"
 	requestMethod    = "Access-Control-Request-Method"
 	requestHeaders   = "Access-Control-Request-Headers"
-	allowHeadersVal  = "Content-Type, Origin, X-CSRF-Token, Authorization, AccessToken, Token, Range, contentType"
+	allowHeadersVal  = "Content-Type, Origin, X-CSRF-Token, Authorization, AccessToken, Token, Range, Signature"
 	exposeHeadersVal = "Content-Length, Access-Control-Allow-Origin, Access-Control-Allow-Headers"
 	methods          = "GET, HEAD, POST, PATCH, PUT, DELETE"
 	allowTrue        = "true"

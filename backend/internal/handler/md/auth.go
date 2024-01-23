@@ -16,7 +16,7 @@ func AuthMiddleWare(fn http.HandlerFunc) http.HandlerFunc {
 		if user, ok := r.Context().Value("user").(types.OaUserInfo); ok {
 			if user.OrgId != svc.GlobalService.Config.WhiteDepId {
 				var manager model.UserManager
-				svc.GetDb(config.DbDefault).Table(model.UserManagerTableName()).Where("user_id=?", user.Id).First(&manager)
+				svc.GetDb(config.DbDefault).ReadWithContext(r.Context()).Table(model.UserManagerTableName()).Where("user_id=?", user.Id).First(&manager)
 				ok, _ := manager.Available()
 				if !ok {
 					api_utils.ResponseStandWithError(w, r, errors.New("未授权进入"))
@@ -36,7 +36,7 @@ func AuthManagerMiddleWare(fn http.HandlerFunc) http.HandlerFunc {
 	next := func(w http.ResponseWriter, r *http.Request) {
 		if user, ok := r.Context().Value("user").(types.OaUserInfo); ok {
 			var manager model.UserManager
-			svc.GetDb(config.DbDefault).Table(model.UserManagerTableName()).Where("user_id=?", user.Id).First(&manager)
+			svc.GetDb(config.DbDefault).ReadWithContext(r.Context()).Table(model.UserManagerTableName()).Where("user_id=?", user.Id).First(&manager)
 			ok, err := manager.Available()
 			if !ok {
 				api_utils.ResponseStandWithError(w, r, err)

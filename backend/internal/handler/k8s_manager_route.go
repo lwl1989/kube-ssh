@@ -15,7 +15,12 @@ func RegisterK8sManagerHandlers(server *rest.Server, serverCtx *svc.ServiceConte
 			{
 				Method:  http.MethodPost,
 				Path:    "/api/k8s/cluster",
-				Handler: md.AuthMiddleWare(ops.ClusterUpsertHandler(serverCtx)),
+				Handler: md.AuthManagerMiddleWare(ops.ClusterUpsertHandler(serverCtx)),
+			},
+			{
+				Method:  http.MethodPut,
+				Path:    "/api/k8s/cluster",
+				Handler: md.AuthManagerMiddleWare(ops.ClusterStatusHandler(serverCtx)),
 			},
 			{
 				Method:  http.MethodGet,
